@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+    <head>
+        <title>Hostel Management System</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+        
+        <style> 
+            h1 {
+                text-align:center;
+                font-size: 28px;
+                font-family: 'Lobster', cursive;
+            }
+
+            body
+            {
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            .fb-profile img.fb-image-lg{
+                z-index: 0;
+                width: 100%;  
+                margin-bottom: 10px;
+            }
+
+            .fb-image-profile
+            {
+                margin: -90px 10px 20px 80px;
+                z-index: 9;
+                width: 20%; 
+            }
+            /* Tabs panel */
+            .tabbable-panel {
+                border:1px solid #eee;
+                padding: 10px;
+            }
+
+            /* Default mode */
+            .tabbable-line > .nav-tabs {
+                border: none;
+                margin: 0px;
+            }
+            .tabbable-line > .nav-tabs > li {
+                margin-right: 2px;
+            }
+            .tabbable-line > .nav-tabs > li > a {
+                border: 0;
+                margin-right: 0;
+                color: #737373;
+            }
+            .tabbable-line > .nav-tabs > li > a > i {
+                color: #a6a6a6;
+            }
+            .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+                border-bottom: 4px solid #fbcdcf;
+            }
+            .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+                border: 0;
+                background: none !important;
+                color: #333333;
+            }
+            .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+                color: #a6a6a6;
+            }
+            .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+                margin-top: 0px;
+            }
+            .tabbable-line > .nav-tabs > li.active {
+                border-bottom: 4px solid #f3565d;
+                position: relative;
+            }
+            .tabbable-line > .nav-tabs > li.active > a {
+                border: 0 !important;
+                color: #333333;
+            }
+            .tabbable-line > .nav-tabs > li.active > a > i {
+                color: #404040;
+            }
+            .tabbable-line > .tab-content {
+                margin-top: -3px;
+                background-color: #fff;
+                border: 0;
+                border-top: 1px solid #eee;
+                padding: 15px 0;
+            }
+            .portlet .tabbable-line > .tab-content {
+                padding-bottom: 0;
+            }
+
+            /* Below tabs mode */
+
+            .tabbable-line.tabs-below > .nav-tabs > li {
+                border-top: 4px solid transparent;
+            }
+            .tabbable-line.tabs-below > .nav-tabs > li > a {
+                margin-top: 0;
+            }
+            .tabbable-line.tabs-below > .nav-tabs > li:hover {
+                border-bottom: 0;
+                border-top: 4px solid #fbcdcf;
+            }
+            .tabbable-line.tabs-below > .nav-tabs > li.active {
+                margin-bottom: -2px;
+                border-bottom: 0;
+                border-top: 4px solid #f3565d;
+            }
+            .tabbable-line.tabs-below > .tab-content {
+                margin-top: -10px;
+                border-top: 0;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 15px;
+            }
+
+            .menu_title {
+                padding: 15px 10px;
+                border-bottom: 1px solid #eee;
+                margin: 0 5px;
+            }
+
+
+            @media (max-width:768px){
+
+                .fb-profile-text>h1{
+                    font-weight: 700;
+                    font-size:16px;
+                }
+
+                .fb-image-profile
+                {
+                    margin: -45px 10px 0px 25px;
+                    z-index: 9;
+                    width: 20%; 
+                }
+            }
+
+        </style>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/font-awesome.css" rel="stylesheet">
+        <!--css-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <script src="js/jquery.min.js"></script>
+        <link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+
+        <!--mycart-->
+        <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+        <!-- cart -->
+        <script src="js/simpleCart.min.js"></script>
+        <!-- cart -->
+        <!--start-rate-->
+        <script src="js/jstarbox.js"></script>
+        <link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+        <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+        <script type="text/javascript">
+
+        </script>
+
+        <style>
+            h1 {
+                text-align:center;
+                font-size: 28px;
+                font-family: 'Lobster', cursive;
+            }
+
+            body
+            {
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            .fb-profile img.fb-image-lg{
+                z-index: 0;
+                width: 100%;  
+                margin-bottom: 10px;
+            }
+
+            .fb-image-profile
+            {
+                margin: -90px 10px 20px 80px;
+                z-index: 9;
+                width: 20%; 
+            }
+            /* Tabs panel */
+            .tabbable-panel {
+                border:1px solid #eee;
+                padding: 10px;
+            }
+
+            /* Default mode */
+            .tabbable-line > .nav-tabs {
+                border: none;
+                margin: 0px;
+            }
+            .tabbable-line > .nav-tabs > li {
+                margin-right: 2px;
+            }
+            .tabbable-line > .nav-tabs > li > a {
+                border: 0;
+                margin-right: 0;
+                color: #737373;
+            }
+            .tabbable-line > .nav-tabs > li > a > i {
+                color: #a6a6a6;
+            }
+            .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+                border-bottom: 4px solid #fbcdcf;
+            }
+            .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+                border: 0;
+                background: none !important;
+                color: #333333;
+            }
+            .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+                color: #a6a6a6;
+            }
+            .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+                margin-top: 0px;
+            }
+            .tabbable-line > .nav-tabs > li.active {
+                border-bottom: 4px solid #f3565d;
+                position: relative;
+            }
+            .tabbable-line > .nav-tabs > li.active > a {
+                border: 0 !important;
+                color: #333333;
+            }
+            .tabbable-line > .nav-tabs > li.active > a > i {
+                color: #404040;
+            }
+            .tabbable-line > .tab-content {
+                margin-top: -3px;
+                background-color: #fff;
+                border: 0;
+                border-top: 1px solid #eee;
+                padding: 15px 0;
+            }
+            .portlet .tabbable-line > .tab-content {
+                padding-bottom: 0;
+            }
+
+            /* Below tabs mode */
+
+            .tabbable-line.tabs-below > .nav-tabs > li {
+                border-top: 4px solid transparent;
+            }
+            .tabbable-line.tabs-below > .nav-tabs > li > a {
+                margin-top: 0;
+            }
+            .tabbable-line.tabs-below > .nav-tabs > li:hover {
+                border-bottom: 0;
+                border-top: 4px solid #fbcdcf;
+            }
+            .tabbable-line.tabs-below > .nav-tabs > li.active {
+                margin-bottom: -2px;
+                border-bottom: 0;
+                border-top: 4px solid #f3565d;
+            }
+            .tabbable-line.tabs-below > .tab-content {
+                margin-top: -10px;
+                border-top: 0;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 15px;
+            }
+
+            .menu_title {
+                padding: 15px 10px;
+                border-bottom: 1px solid #eee;
+                margin: 0 5px;
+            }
+
+
+            @media (max-width:768px){
+
+                .fb-profile-text>h1{
+                    font-weight: 700;
+                    font-size:16px;
+                }
+
+                .fb-image-profile
+                {
+                    margin: -45px 10px 0px 25px;
+                    z-index: 9;
+                    width: 20%; 
+                }
+            }
+
+        </style>
+
+
+    </head>
+
+
+    <img src="images/demo/CHITKARA_1.jpg" style="text-align: center;" text-align="center">
+
+
+    <a style="font-size: 30px;color:white;">HOSTEL MANAGEMENT SYSTEM</a>
+
+
+
+    <div class="bgded" style="background-image:url('images/demo/backgrounds/01.jpg');"> 
+
+    <div class="bgded" style="background-image:url('images/demo/backgrounds/01.jpg');"> 
+
+        <div class="wrapper row2">
+            <nav id="mainav" class="hoc clear"> 
+
+                <ul class="clear">
+                    <li class="active"><a href="index_1.html">HOME</a></li>
+                    <li><a class="drop" href="#">REGISTRATION</a>
+                        <ul>
+<li><a href="admin.html">Admin</a></li>
+                            <li><a href="registration.html">New Student</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="login.html">Log In</a></li>
+
+                </ul>
+
+            </nav>
+        </div>
+
+       
+    </div>
+        
+
+    </div>
+   
+    <body>
+        
+        <!--header-->
+       
+        <div class="container-fluid">
+            <div class="row">
+                <div class="fb-profile">
+                    <img align="left" class="fb-image-lg" src="images/demo/CH.jpg" alt="CH.jpg">
+                    <img align="left" class="fb-image-profile thumbnail" src="images/demo/LO.jpg" alt="Profile image example"/>
+                    <div class="fb-profile-text">
+                        <h1>CHITKARA UNIVERSITY <br>HIMACHAL PRADESH</h1><br>
+                        <h5>  
+                            ATAL SHIKSHA KUNJ BADDI,<br>
+                            HIMACHAL PRADESH - 174103<br>
+                            Phone: 079-27541148, 079-27540746<br>
+                            Fax: 279-27542547<br>
+                        </h5>
+
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /container fluid-->  
+        <div class="container">
+            <div class="col-sm-8">
+
+                <div data-spy="scroll" class="tabbable-panel">
+                    <div class="tabbable-line">
+                        <ul class="nav nav-tabs ">
+                            <li class="active">
+                                <a href="#tab_default_1" data-toggle="tab">
+                                    <B>History</B> </a>
+                            </li>
+                            <li>
+                                <a href="#tab_default_2" data-toggle="tab">
+                                    <B>Colleges</B></a>
+                            </li>
+                            <li>
+                                <a href="#tab_default_3" data-toggle="tab">
+                                    <B>Department</B></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_default_1">
+
+                                <br><p>
+                               In the year 2002, Chitkara Educational Trust established its Punjab campus 30 kilometres from Chandigarh, on <BR>
+                               the Chandigarh–Patiala National Highway. In the year 2010 Chitkara University was established by the Punjab <BR>
+                               State Legislature under “The Chitkara University Act”.<BR>
+
+                               Chitkara University, the best university in Punjab is a government-recognized university with the right to confer<BR>
+                               degrees as per the Sections 2(f) and 22(1) of the UGC Act, 1956.<BR>
+
+                               <B>VISION</B><BR>
+To be a globally recognized organization promoting academic excellence through interdisciplinary applied <BR>
+research and to expand realms of knowledge through innovation. </p><br>
+                               
+                            </div>
+
+                            <div class="tab-pane" id="tab_default_2"><br>
+                                <p>The colleges and institutions affiliated with the university are</p><br>
+                                <p>1. CHITKARA UNIVERSITY BADDI HIMACHAL PRADESH</p><br>
+                                <p>2. CHITKARA UNIVERSITY RAJPURA PUNJAB</p><br>
+                                
+                            </div>
+
+
+                            <div class="tab-pane" id="tab_default_3"><br>
+                                <p>1. COMP. SCI. & ENGINEERING</p><br>
+                                <p>2. CIVIL ENGINEERING</p><br>
+                                <p>3. ELECTRONICS ENGINEERING</p><br>
+                                <p>4. MECH. ENGINEERING</p><br>
+                                
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="menu_title">
+                        CHITKARA UNIVERSITY
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="email">Place:</label>
+                                    <p> HIMACHAL PRADESH</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">University Founded:</label>
+                                    <p> October 18, 2010 </p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Chancellor:</label>
+                                    <p>  DR. ASHOK CHITKARA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+</body>
+</html>
